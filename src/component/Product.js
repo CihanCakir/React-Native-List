@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Table } from "reactstrap";
+import { Table, Button } from "reactstrap";
 
 export default class Product extends Component {
+
     render() {
         return (
             <div>
@@ -14,6 +15,7 @@ export default class Product extends Component {
                             <th>Ürün Ücret</th>
                             <th>Ürün Tipi</th>
                             <th>Ürün Stok</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,6 +26,7 @@ export default class Product extends Component {
                                 <th>{product.unitPrice} </th>
                                 <th>{product.quantityPerUnit}</th>
                                 <th> {product.unitsInStock} </th>
+                                <td><Button onClick={() => this.props.addToCart(product)} color="success">Ekle</Button></td>
                             </tr>
                         ))}
                     </tbody>
